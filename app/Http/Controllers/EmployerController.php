@@ -11,7 +11,7 @@ class EmployerController extends Controller
 {
     public function index()
     {
-        $employers = Employer::orderBy('created_at', 'desc')->get();
+        $employers = Employer::all();
         return view('employers.index', compact('employers'));
     }
 
