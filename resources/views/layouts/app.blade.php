@@ -242,18 +242,18 @@
 
     <div class="main-layout">
         <aside id="sidebar">
-            <a class="navbar-brand fs-4" href="#"><i class="bi bi-building-fill-gear"></i> Company Records</a>
+            <a class="navbar-brand fs-4" href="{{ route('homepage') }}"><i class="bi bi-building-fill-gear"></i> Company Records</a>
             <div class="list-group" id="main-nav">
-                <a href="#dashboard-pane" class="list-group-item list-group-item-action" data-bs-toggle="pane"><i class="bi bi-pie-chart-fill me-2"></i>ภาพรวม</a>
-                <a href="#notification-pane" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-tab-target="90day-tab">
+                <a href="{{ route('homepage') }}" class="list-group-item list-group-item-action {{ request()->routeIs('homepage') ? 'active' : '' }}"><i class="bi bi-pie-chart-fill me-2"></i>ภาพรวม</a>
+                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                     <span><i class="bi bi-bell-fill me-2"></i>แจ้งเตือน</span>
                     <span class="badge bg-danger rounded-pill" id="notification-total-badge" style="display: none;"></span>
                 </a>
                 <hr>
-                <a href="#employer-system-pane" id="nav-employer-system-pane" class="list-group-item list-group-item-action active" data-bs-toggle="pane"><i class="bi bi-person-vcard-fill me-2"></i>ข้อมูลนายจ้าง</a>
-                <a href="#importer-system-pane" class="list-group-item list-group-item-action" data-bs-toggle="pane"><i class="bi bi-box-arrow-in-down-left me-2"></i>ข้อมูลบริษัทนำเข้า</a>
-                <a href="#agent-system-pane" class="list-group-item list-group-item-action" data-bs-toggle="pane"><i class="bi bi-person-square me-2"></i>ข้อมูลเอเจนซี่</a>
-                <a href="#delegate-system-pane" class="list-group-item list-group-item-action" data-bs-toggle="pane"><i class="bi bi-people-fill me-2"></i>ข้อมูลพนักงาน</a>
+                <a href="{{ route('employers.index') }}" class="list-group-item list-group-item-action {{ request()->routeIs('employers.*') ? 'active' : '' }}"><i class="bi bi-person-vcard-fill me-2"></i>ข้อมูลนายจ้าง</a>
+                <a href="{{ route('importers.index') }}" class="list-group-item list-group-item-action {{ request()->routeIs('importers.*') ? 'active' : '' }}"><i class="bi bi-box-arrow-in-down-left me-2"></i>ข้อมูลบริษัทนำเข้า</a>
+                <a href="{{ route('agents.index') }}" class="list-group-item list-group-item-action {{ request()->routeIs('agents.*') ? 'active' : '' }}"><i class="bi bi-person-square me-2"></i>ข้อมูลเอเจนซี่</a>
+                <a href="{{ route('delegates.index') }}" class="list-group-item list-group-item-action {{ request()->routeIs('delegates.*') ? 'active' : '' }}"><i class="bi bi-people-fill me-2"></i>ข้อมูลพนักงาน</a>
             </div>
         </aside>
 
