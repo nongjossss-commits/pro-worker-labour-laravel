@@ -6,6 +6,7 @@ use App\Http\Controllers\ImporterController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\DelegateController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\HomepageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,7 @@ use App\Http\Controllers\EmployeeController;
 */
 
 // Route for the homepage
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [HomepageController::class, 'index'])->name('home');
 
 // Main modules using resource controllers
 Route::resource('employers', EmployerController::class);
