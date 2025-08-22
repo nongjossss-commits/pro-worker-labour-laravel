@@ -15,7 +15,7 @@ use App\Http\Controllers\EmployeeController;
 
 // Route for the homepage
 Route::get('/', function () {
-    return view('homepage');
+    return view('welcome');
 })->name('home');
 
 // Main modules using resource controllers
